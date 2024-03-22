@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de história boba</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            width: 400px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        div {
+            padding-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            width: 150px;
+        }
+
+        p {
+            background: #ffc125;
+            color: #5e2612;
+            padding: 10px;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="customname">Insira o nome personalizado: </label>
+        <input type="text" name="custom" id="customname" placeholder="">
+    </div>
+    <div>
+        <label for="br">BR</label>
+        <input type="radio" name="ukus" id="br" value="br" checked>
+        <label for="uk">UK</label>
+        <input type="radio" name="ukus" id="uk" value="uk">
+    </div>
+    <div>
+        <button class="randomize">Gerar história aleatória</button>
+    </div>
+    
+    <p class="story"></p>
+
+    <script src="main.js"></script>
+</body>
+</html>
