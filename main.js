@@ -7,24 +7,24 @@ function randomValueFromArray(array) {
     return array[random]
 }
 
-const storyText = `Estavam 94 Fahrenheit lá fora, então :insertx: fui dar uma caminhada. Quando chegaram a :inserty:, ficaram olhando horrorizados por alguns momentos, depois :insertz:. Bob viu tudo, mas não ficou surpreso - :insertx: pesa 300 quilos e era um dia quente.`
+const storyText = `It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.`
 
 const insertX = [
-    "Willy, o Duende",
-    "Paizão",
-    "Papai Noel"
+    "Willy the Goblin",
+    "Big Daddy",
+    "Father Christmas"
 ]
 
 const insertY = [
-    "a sopa dos pobres",
-    "Disneylândia",
-    "a Casa Branca"
+    "the soup kitchen",
+    "Disneyland",
+    "the White House"
 ]
 
 const insertZ = [
-    "combustão espontânea",
-    "derreteu em uma poça na calçada",
-    "se transformou em uma lesma e se arrastou para longe"
+    "spontaneously combusted",
+    "melted into a puddle on the sidewalk",
+    "turned into a slug and crawled away"
 ]
 
 randomize.addEventListener('click', result)
