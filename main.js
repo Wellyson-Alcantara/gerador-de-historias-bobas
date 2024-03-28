@@ -7,7 +7,7 @@ function randomValueFromArray(array) {
     return array[random]
 }
 
-const storyText = `It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.`
+let storyText = `It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.`
 
 const insertX = [
     "Willy the Goblin",
@@ -30,19 +30,35 @@ const insertZ = [
 randomize.addEventListener('click', result)
 
 function result() {
-    const newStory = storyText
     const xItem = randomValueFromArray(insertX) 
     const yItem = randomValueFromArray(insertY)
     const zItem = randomValueFromArray(insertZ)
+
+    // Estas linhas de código iram fazer a subistituição correta dos espaços vagos
+    let newStory = storyText
+    newStory = newStory.replace(':insertx:', xItem)
+    newStory = newStory.replace(':inserty:', yItem)
+    newStory = newStory.replace(':insertz:', zItem)
+    newStory = newStory.replace(':insertx:', xItem)
+
     if(customName.value !== '') {
         const name = customName.value
+        newStory = newStory.replace('Bob', name)
     }
 
     if(document.getElementById("uk").checked) {
-        const weight = Math.round(300)
-        const temperature = Math.round(94)
+        // Convertendo 300 libras em pedras
+        const weight = Math.round(300 / 14) + ' stone'
+
+        // Convertendo 94 graus Fahrenheit em graus Celsius
+        const temperature = Math.round((94 - 32) * (5 / 9)) + ' centigrade'
+
+        // Substituindo '94 fahrenheit' pelo conteúdo da variável temperature
+        // Substituindo '300 libras' pelo conteúdo da variável weight
+        newStory = newStory.replace('94 fahrenheit', temperature)
+        newStory = newStory.replace('300 pounds', weight)
     }
 
-    story.textContent = 
+    story.textContent = newStory
     story.style.visibility = 'visible'
 }
